@@ -1,0 +1,52 @@
+<div class="container">
+  <br>
+  <div *ngIf="deleteMessage" class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Employee ID <strong>{{message.status_id}}</strong> successfully deleted.
+  </div>
+<table class="table mt-4 text-center">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Role</th>
+	   <th scope="col">Experiance</th>
+	   <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employeesList">
+      <th id="id" scope="row">{{employee.id}}</th>
+      <td>{{employee.Name}}</td>
+      <td>{{employee.Designation}}</td>
+      <td>{{employee.Role}}</td>
+	   <td>{{employee.Experiance}}</td>
+	    <td>
+		<button type="button" (click)="edit(employee)"  data-toggle="modal" data-target="#edit"  class="btn btn-outline-primary"><i class="fa fa-edit"></i> Edit </button>  &nbsp;
+		<button data-toggle="modal" (click)="delete(employee)" data-target="#delete" class="btn btn-outline-danger"><i class="fa fa-trash"></i> Delete </button> 
+		</td>
+    </tr>
+	
+  </tbody>
+</table>
+
+</div>
+<!-- delete -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update employee </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<app-edit [edit]="editId"></app-edit>
+      </div>
+     
+    </div>
+  </div>
+</div>
+

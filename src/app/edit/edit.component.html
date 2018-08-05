@@ -1,0 +1,27 @@
+<form #editform="ngForm">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="hidden" name="id" [(ngModel)]="employee.id" #nameField="ngModel"/>
+
+    <input type="text" class="form-control" name="Name" [(ngModel)]="employee.Name" #nameField="ngModel"/>
+  </div>
+  <div class="form-group">
+    <label>Designation</label>
+    <select class="form-control" name="Designation" [(ngModel)]="employee.Designation" #designationField="ngModel">
+      <option *ngFor="let designation of designations">{{designation.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Role</label>
+    <input type="text" class="form-control" name="Role" [(ngModel)]="employee.Role" #roleField="ngModel"/>
+  </div>
+  <div class="form-group">
+    <label>Experiance	</label>
+    <input type="text" class="form-control" name="Experiance" [(ngModel)]="employee.Experiance" #ExperianceField="ngModel"/>
+  </div>
+  <button type="submit" (click)="Update(editform.value)" class="btn btn-outline-primary">Update</button> &nbsp;
+  <button type="submit" #closeBtn class="btn btn-outline-danger" data-dismiss="modal">No</button>
+</form>
+<pre>
+    {{editform.value | json}}
+</pre>
