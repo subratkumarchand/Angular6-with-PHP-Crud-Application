@@ -17,7 +17,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let employee of employeesList">
-      <th id="id" scope="row">{{employee.id}}</th>
+      <th class="text-primary" id="id" scope="row"  routerLink="/employee/{{employee.id}}">{{employee.id}}</th>
       <td>{{employee.Name}}</td>
       <td>{{employee.Designation}}</td>
       <td>{{employee.Role}}</td>

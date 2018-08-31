@@ -5,10 +5,10 @@ import { employeeType } from '../employees/employees.type';
 
 @Component({
   selector: 'app-employees-action',
-  templateUrl: './employees-action.component.html',
-  styleUrls: ['./employees-action.component.css']
+  templateUrl: './employees-create.component.html',
+  styleUrls: ['./employees-create.component.css']
 })
-export class EmployeesActionComponent implements OnInit {
+export class EmployeesCreateComponent implements OnInit {
   public message: object = {};
   public create: boolean = false;
   public titl: string = " create an employee";

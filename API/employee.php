@@ -11,8 +11,8 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
   switch($request_method){
     case 'GET':
 		getEmployee();
-	 break;
-	 case 'POST':
+	    break;
+	case 'POST':
         insertEmployee();
         break;
     case 'PUT':

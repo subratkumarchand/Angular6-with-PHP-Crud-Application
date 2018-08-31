@@ -26,5 +26,9 @@ updateEmployee(employee:employeeType){
   return this._http.put("http://localhost/api/employee.php",employee);
 }
 
+getDetailsEmployee(id:number) : Observable<employeeType []>{
+  debugger
+  return this._http.get<employeeType []>("http://localhost/api/employee.php");
+ }
 
 }
