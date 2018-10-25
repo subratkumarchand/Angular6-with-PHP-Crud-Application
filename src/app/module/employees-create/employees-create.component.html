@@ -1,0 +1,56 @@
+<div class="container">
+  <br>
+  <div *ngIf="create" class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Employee name <strong>{{message.status_name}}</strong> successfully created.
+  </div>
+  <h3 class="my-5">{{titl}}</h3>
+
+  <form #companyForm="ngForm" (ngSubmit)="submitCompany(companyForm.value); companyForm.reset()">
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="enter employee name" name="Name" ngModel #nameField="ngModel" required >
+      </div>
+      <div class="error" *ngIf="nameField.touched && !nameField.valid">
+					The name is required
+				</div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <select class="form-control" name="Designation" ngModel #designationField="ngModel" required>
+					<option value="">select designation</option>
+          <option *ngFor="let designation of designations" [value]="designation.name">
+            {{ designation.name }}
+          </option>
+        </select>
+      </div>
+      <div class="error" *ngIf="designationField.touched && !designationField.valid">
+        The designation is required
+      </div>
+    </div>
+		<div class="form-group">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="enter role" name="Role" ngModel #roleField="ngModel" required >
+				</div>
+				<div class="error" *ngIf="roleField.touched && !roleField.valid">
+						The role is required
+					</div>
+			</div>
+      <div class="form-group">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="enter experiance" name="Experiance" ngModel #experianceField="ngModel" required >
+				</div>
+				<div class="error" *ngIf="experianceField.touched && !experianceField.valid">
+						The Experiance is required
+					</div>
+			</div>
+		<button class="btn btn-primary" [disabled]="!companyForm.valid">Submit</button> &nbsp;&nbsp;
+		<button class="btn btn-outline-danger" (click)="goBack()">Go back</button>
+		
+		<pre>
+			{{companyForm.value | json}}
+		</pre>
+  </form>
+
+
+</div>

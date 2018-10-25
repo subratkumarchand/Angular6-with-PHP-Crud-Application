@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeesService } from '../employees.service';
-import { employeeType } from './employees.type';
+import { EmployeesService } from '../../services/employees.service';
+import { employeeType } from '../../interface/employees.type';
 @Component({
   //selector: 'app-employees',
   templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.css'],
+  styleUrls: ['./employees.component.scss'],
 })
 export class EmployeesComponent implements OnInit {
   employeesList: employeeType[] = [];

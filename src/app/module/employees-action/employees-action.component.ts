@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeesService } from '../employees.service';
+import { EmployeesService } from '../../services/employees.service';
 import { Router } from '@angular/router';
-import { employeeType } from '../employees/employees.type';
+import { employeeType }  from '../../interface/employees.type'; 
+import { from } from 'rxjs';
 
-@Component({
+@Component({    
   selector: 'app-employees-action',
-  templateUrl: './employees-create.component.html',
-  styleUrls: ['./employees-create.component.css']
+  templateUrl: './employees-action.component.html',
+  styleUrls: ['./employees-action.component.css']
 })
-export class EmployeesCreateComponent implements OnInit {
+export class EmployeesActionComponent implements OnInit {
   public message: object = {};
   public create: boolean = false;
   public titl: string = " create an employee";

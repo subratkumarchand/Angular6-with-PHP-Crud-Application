@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import { employeeType } from '../employees/employees.type';
-import { EmployeesService } from '../employees.service';
+import { employeeType } from '../../interface/employees.type';
+import { EmployeesService } from '../../services/employees.service';
 
 declare var $ :any;
 @Component({
